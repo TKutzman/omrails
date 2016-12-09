@@ -29,6 +29,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootstrap', '~> 4.0.0.alpha5'
 # allows use of bootstrap
 
+gem 'devise'
+# library for having users 
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

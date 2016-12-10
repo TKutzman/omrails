@@ -2,9 +2,45 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body {
+  padding-top: 50px;
+}
+
 .jumbotron-home {
-    background-image: url(image_path('home-bg.jpg'));
-    background-repeat: no-repeat;
-    background-position: center center;
+    background-image: url(image_path('happy_couple.jpg'));
     background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center; 
+}
+
+html,
+body,
+
+.view {
+    background: url(image_path('happy_couple.jpg')) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.landing-h1-header {
+	position: relative; 
+   top: 150px; 
+   left: 10; 
+   width: 100%; 
+}
+
+.landing-h2-header {
+	position: relative; 
+   top: 170px; 
+   left: 10; 
+   width: 100%; 
+}
+
+.devise-form-header {
+	position: relative; 
+   top: 210px; 
+   left: 10; 
+   width: 100%; 
 }

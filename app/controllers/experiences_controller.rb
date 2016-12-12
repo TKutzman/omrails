@@ -47,7 +47,6 @@ class ExperiencesController < ApplicationController
     @experience = current_user.experiences.find(params[:id])
     @experience.destroy
     redirect_to experiences_url, notice: 'Experience was successfully destroyed.' 
-    end
   end
 
 

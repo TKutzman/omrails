@@ -20,6 +20,9 @@ gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+
+gem 'jquery-ui-rails', '~> 4.2.1'
+
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
@@ -31,6 +34,10 @@ gem 'bootstrap', '~> 4.0.0.alpha5'
 
 gem 'devise'
 # library for having users 
+
+gem 'activeadmin', '~> 1.0.0.pre4'
+gem 'inherited_resources', github: 'activeadmin/inherited_resources'
+# Use for library needed to add active admin
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -57,3 +64,5 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+

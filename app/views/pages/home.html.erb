@@ -3,11 +3,11 @@
     <div class="container-fluid">
         <h1>Welcome Back!</h1>
         <p>What's your newest FSBO experience?</p>
-        <%= link_to "Start exploring »", "#", class: "btn btn-primary btn-lg" %> 
+        <%= link_to "Start exploring »", experiences_path, class: "btn btn-primary" %> 
         </div>
-</div>
+    </div>
 <% else %>
-    <div class="view">
+    <body class="home">
     <!--Intro content-->
     <div class="full-bg-img flex-center">
     <div id="side_bar" class="clearfix">
@@ -16,6 +16,4 @@
     </div>
     </div>
     </div>
-    </div>
-
 <% end %>

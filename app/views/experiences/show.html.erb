@@ -1,0 +1,23 @@
+<div class="container">
+	<p>
+	  <strong>User:</strong>
+	  <%= @experience.user %>
+	</p>
+
+	<p>
+	  <strong>Topic:</strong>
+	  <%= @experience.topic %>
+	</p>
+
+	<p>
+	  <strong>Content:</strong>
+	  <%= @experience.content %>
+	</p>
+
+	<% if @experience.user == current.user %>
+		<%= link_to 'Edit', edit_experience_path(@experience) %> 
+	<% end %>
+
+	<%= link_to 'Back', experiences_path %>
+
+</div>

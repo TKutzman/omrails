@@ -14,7 +14,7 @@
 	  <%= @experience.content %>
 	</p>
 
-	<% if @experience.user == current.user %>
+	<% if @experience.user == current_user %>
 		<%= link_to 'Edit', edit_experience_path(@experience) %> 
 	<% end %>
 

@@ -1,5 +1,5 @@
 class ExperiencesController < ApplicationController
-  before_action :authenticate_user! except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show]
 
   # GET /experiences
   def index
@@ -55,4 +55,4 @@ class ExperiencesController < ApplicationController
     def experience_params
       params.require(:experience).permit(:user_id, :topic, :content)
     end
- 
+  end

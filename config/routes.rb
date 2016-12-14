@@ -1,5 +1,14 @@
 Rails.application.routes.draw do
-  resources :experiences
+  root 'experiences#index'
+
+  resources :experiences do 
+    resources :comments
+  end
+
+  resources :comments do 
+    resources :comments
+  end
+  
   ActiveAdmin.routes(self)
   devise_for :users
   as :user do

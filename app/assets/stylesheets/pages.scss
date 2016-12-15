@@ -4,6 +4,7 @@
 
 
 .jumbotron-home {
+    position: relative;
     background-image: url(image_path('happy_couple.jpg'));
     background-size: cover;
     background-repeat: no-repeat;
@@ -12,10 +13,7 @@
 
 body {
     padding: 70px; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+    
 }
 
 body.home {
@@ -26,6 +24,15 @@ body.home {
     background-size: cover;
 }
 
+.navbar-custom {
+    color: #283593;
+    background-color: #283593;
+}
+
+.panel-experiences {
+    panel-border-style: solid;
+    panel-border-color: #283593;
+}
 
 .landing-h1-header {
 	position: relative; 

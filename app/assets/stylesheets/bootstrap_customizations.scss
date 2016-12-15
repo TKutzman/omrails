@@ -24,7 +24,7 @@ $gray-light:                #818a91;
 $gray-lighter:              #eceeef;
 $gray-lightest:             #f7f7f9;
 
-$brand-primary:             #1F3A93;
+$brand-primary:             #C5CAE9;
 $brand-success:             #5cb85c;
 $brand-info:                #1F3A93;
 $brand-warning:             #f0ad4e;
@@ -47,7 +47,7 @@ $enable-transitions:        false;
 // Control the default styling of most Bootstrap elements by modifying these variables.
 
 $spacer:   1rem;
-$border-width: 1px;
+$border-width: 2px;
 
 
 // Body
@@ -97,7 +97,7 @@ $headings-margin-bottom: ($spacer / 2);
 $headings-font-family:   inherit;
 $headings-font-weight:   500;
 $headings-line-height:   1.1;
-$headings-color:         inherit;
+$headings-color:         #283593;
 
 
 // Components
@@ -119,10 +119,10 @@ $navbar-padding-x:                  $spacer;
 $navbar-padding-y:                  ($spacer / 2);
 $navbar-brand-padding-y:            .25rem;
 
-$navbar-dark-color:                 rgba(0,0,0,0.5);
-$navbar-dark-hover-color:           rgba(0,0,0,0.5);
-$navbar-dark-active-color:          rgba(0,0,0,0.5);
-$navbar-dark-disabled-color:        rgba(0,0,0,0.5);
+$navbar-dark-color:                 rgba(26, 35, 126,1.0);
+$navbar-dark-hover-color:           rgba(159, 168, 218,1.0);
+$navbar-dark-active-color:          rgba(58,183,55,0.5);
+$navbar-dark-disabled-color:        rgba(58,183,55,0.5);
 
 $navbar-light-color:                rgba(0,0,0,.3);
 $navbar-light-hover-color:          rgba(0,0,0,.6);
@@ -131,6 +131,5 @@ $navbar-light-disabled-color:       rgba(0,0,0,.15);
 
 
 // Jumbotron
-
-$jumbotron-padding:              8rem;
+$jumbotron-padding:              6rem;
 $jumbotron-bg:                   $gray-lighter;

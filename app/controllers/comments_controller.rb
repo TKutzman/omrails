@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :find_commentable
 
 
@@ -8,7 +9,6 @@ class CommentsController < ApplicationController
 
     def create
       @comment = @commentable.comments.new comment_params
-      @comment.user_contact = current_user.find(:email)
 
       if @comment.save
         redirect_to :back, notice: 'Your comment was successfully posted!'

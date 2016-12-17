@@ -1,9 +1,12 @@
 <% if user_signed_in? %>
-    <div class="jumbotron jumbotron-home container-fluid">
+    <div class="jumbotron">
+    <div class="container-full">
         <h1>Welcome Back!</h1>
         <p>What's your newest FSBO experience?</p>
         <%= link_to "Start exploring »", experiences_path, class: "btn btn-primary" %> 
     </div>
+    </div>
+    <hr size=2>
 <% else %>
     <body class="home">
     <!--Intro content-->

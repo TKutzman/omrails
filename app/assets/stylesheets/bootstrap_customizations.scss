@@ -24,7 +24,7 @@ $gray-light:                #818a91;
 $gray-lighter:              #eceeef;
 $gray-lightest:             #f7f7f9;
 
-$brand-primary:             #C5CAE9;
+$brand-primary:             #7b7a8c;
 $brand-success:             #5cb85c;
 $brand-info:                #1F3A93;
 $brand-warning:             #f0ad4e;
@@ -110,25 +110,6 @@ $line-height-sm:         1.5;
 $border-radius:          .25rem;
 $border-radius-lg:       .3rem;
 $border-radius-sm:       .2rem;
-
-
-// Navbar
-
-$navbar-border-radius:              $border-radius;
-$navbar-padding-x:                  $spacer;
-$navbar-padding-y:                  ($spacer / 2);
-$navbar-brand-padding-y:            .25rem;
-
-$navbar-dark-color:                 rgba(26, 35, 126,1.0);
-$navbar-dark-hover-color:           rgba(159, 168, 218,1.0);
-$navbar-dark-active-color:          rgba(58,183,55,0.5);
-$navbar-dark-disabled-color:        rgba(58,183,55,0.5);
-
-$navbar-light-color:                rgba(0,0,0,.3);
-$navbar-light-hover-color:          rgba(0,0,0,.6);
-$navbar-light-active-color:         rgba(0,0,0,.8);
-$navbar-light-disabled-color:       rgba(0,0,0,.15);
-
 
 // Jumbotron
 $jumbotron-padding:              6rem;

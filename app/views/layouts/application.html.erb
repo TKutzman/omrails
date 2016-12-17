@@ -9,18 +9,17 @@
   </head>
 
   <body>
-    <div class="inner">
    <!-- Navigation Bar -->
-    <nav class="navbar navbar-fixed-top navbar-custom">
+    <nav class="navbar navbar-fixed-top navbar-default">
       <%= link_to "FSBO Forum", root_path, class: "navbar-brand" %>
-      <ul class="nav navbar-nav">
+      <ul class="nav navbar-nav navbar-default">
         <li class="nav-item"><%= link_to "Home", root_path, class: "nav-link" %></li>
         <li class="nav-item"><%= link_to "About", about_path, class: "nav-link" %></li>
         <li class="nav-item"><%= link_to "Contact", contactus_path, class: "nav-link" %></li>
         <% if user_signed_in? %>
           <li class="nav-item"><%= link_to "Experiences", experiences_path, class: "nav-link" %></li>
           <li class="nav-item float-md-right"><%= link_to "Log out", signout_path, method: :delete, class: "nav-link" %></li>
-          <li class="nav-item float-md-right"><%= link_to "Share An Experience", new_experience_path, class: "btn" %></li>
+          <li class="nav-item float-md-right"><%= link_to "Share An Experience", new_experience_path, class: "btn btn-primary" %></li>
         <% else %>
           <li class="nav-item float-md-right"><%= link_to "Sign up", signup_path, class: "btn btn-primary" %></li>
           <li class="nav-item float-md-right"><%= link_to "Sign in", signin_path, class: "nav-link" %></li>
@@ -28,7 +27,7 @@
 
       </ul>
     </nav>
-    </div>
+    
 
 
     <!-- Flash Messages -->
@@ -38,9 +37,9 @@
 
    <!-- Page Content -->
 
-    <div class="container">
+ 
       <%= yield %>
-    </div>
+   
     
   </body>
 </html>

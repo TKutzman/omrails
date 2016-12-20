@@ -1,31 +1,29 @@
 <p id="notice"><%= notice %></p>
-<div class="container">
+
   <div class="row">
     <div class="col-md-4">
         <%= current_user.email %>
     </div>
+
     <div class="col-md-8">
-      <% if user_signed_in? %>
-      <h1>Experiences</h1><%= link_to 'New Experience', new_experience_path %>
-      <% end %>
-      <hr size=2>
-       
-      <% @experiences.each do |experience| %>
-        <div class="panel">
-          <div class="panel-heading">
-          <h3 class="panel-title"><%= experience.topic %>, <small>     posted by <%= experience.user.email %></small></h3>
-          </div>
-          <div class="panel-body">
-            <p><%= truncate(experience.content, :length =>50) %> ...</p>
-          </div>
-          <div class="panel-footer">
-            <%= link_to 'Read more', experience, class: "btn btn-primary" %>  <% if experience.user == current_user %><%= link_to 'Edit', edit_experience_path(experience), class: "btn btn-primary" %><% end %>  <%= link_to 'Delete', experience, class: "btn btn-primary", method: :delete, data: {confirm: 'Are you sure?'}  %>
-          </div>
-          <hr size=2>
-        </div>
-      <% end %>
+      
+      <h1>Experiences</h1>
+      <% if user_signed_in? %><%= link_to 'Share An Experience', new_experience_path, class: "btn btn-outline-primary btn-sm" %><% end %>
+
+      <div class="container">
+        <ul class="list-group">
+          <% @experiences.each do |experience| %>
+            <%=link_to experience, class: "list-group-item list-group-item-action" do%>
+              <h5 class="list-group-item-heading"><%= experience.topic %>, <small>     posted by <%= experience.user.email %></small></h5>
+           
+              <p class="list-group-item-text"><%= truncate(experience.content, :length =>50) %> ...</p>
+              <% end %>
+          <% end %>
+        </ul>
+      </div>  
     </div>
   </div>
+
   
 
 

@@ -3,11 +3,12 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :rememberable, :trackable, :validatable
-
+ 
   has_many :experiences
 
-  validates :username, presence: true, uniqueness: true, length: { minimum: 6}
-  validates :name, presence: true
+  validates :username, presence: true, uniqueness: true, length: { minimum: 6}, format: { with: /\A[a-z0-9]+\z/ }
 
-  
+  acts_as_followable
+  acts_as_follower
+
 end

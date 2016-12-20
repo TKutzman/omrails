@@ -39,6 +39,8 @@ gem 'activeadmin', '~> 1.0.0.pre4'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 # Use for library needed to add active admin
 
+gem "acts_as_follower", github: "tcocca/acts_as_follower"
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

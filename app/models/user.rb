@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_many :experiences
 
   validates :username, presence: true, uniqueness: true, length: { minimum: 6}
-  validates :name, presence :true
-end
+  validates :name, presence: true
+
   
 end

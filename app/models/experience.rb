@@ -6,4 +6,6 @@ class Experience < ApplicationRecord
   validates :content, presence: true
   validates :user, presence: true
 
+  acts_as_votable
+  
 end

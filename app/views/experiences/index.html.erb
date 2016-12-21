@@ -2,22 +2,28 @@
 
   <div class="row">
     <div class="col-md-4">
-        <%= link_to current_user.username, user_path(current_user.username) %>
+        <h1>Explore FSBO Experiences</h1>
     </div>
 
     <div class="col-md-8">
-      
-      <h1>Experiences</h1>
-      <% if user_signed_in? %><%= link_to 'Share An Experience', new_experience_path, class: "btn btn-outline-primary btn-sm" %><% end %>
+      <% if user_signed_in?  %><%= link_to 'Share An Experience', new_experience_path, class: "btn btn-outline-primary btn-sm" %><% end %>
 
       <div class="container">
         <ul class="list-group">
           <% @experiences.each do |experience| %>
-            <%=link_to experience, class: "list-group-item list-group-item-action" do%>
-              <h5 class="list-group-item-heading"><%= experience.topic %>, <small>     posted by <%= experience.user.username %></small></h5>
-           
-              <p class="list-group-item-text"><%= truncate(experience.content, :length =>50) %> ...</p>
+              <li class="list-group-item">
+              <% if experience.votes_for.up.size > 0 %>
+                <span class="tag tag-default tag-pill float-xs-right"><%= experience.votes_for.up.size %> Likes</span> 
+              <% else %>
+                <% if current_user.voted_up_on? experience %>
+                    <span class="btn btn-outline-primary btn-sm float-xs-right"><%= link_to 'Unlike', unvote_experience_path(experience), method: :delete %></span> 
+                <% else %>
+                  <span class="btn btn-outlne-primary btn-sm float-xs-right"><%= link_to 'Click to Like', vote_experience_path(experience), method: :post %></span> 
+                <% end %>
               <% end %>
+                <h5 class="list-group-item-heading"><%= experience.topic %>, <small>     posted by <%= experience.user.username %></small></h5>
+                <p class="list-group-item-text"><%= truncate(experience.content, :length =>50) %> ...</p>
+              </li>
           <% end %>
         </ul>
       </div>  

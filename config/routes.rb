@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   get 'feed', to: 'feed#show'
+
+
   
   resources :users, only: :show, param: :username do
     member do
@@ -11,6 +13,13 @@ Rails.application.routes.draw do
    
   resources :experiences do 
     resources :comments
+  end
+
+  resources :experiences do
+    member do
+      post 'vote', to: 'votes#create'
+      delete 'unvote', to: 'votes#destroy'
+    end
   end
 
   resources :comments do 

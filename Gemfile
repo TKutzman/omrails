@@ -40,6 +40,10 @@ gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 # Use for library needed to add active admin
 
 gem "acts_as_follower", github: "tcocca/acts_as_follower"
+# use for following
+
+gem 'acts_as_votable', '~> 0.10.0'
+# use for upvotes, downvotes, etc 
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -58,6 +62,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'sqlite3'
 end
 
 group :production do

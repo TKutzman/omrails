@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<div class="container">
   <div class="row">
     <div class="col-md-4">
         <h1>Explore FSBO Experiences</h1>
@@ -12,22 +12,25 @@
         <ul class="list-group">
           <% @experiences.each do |experience| %>
               <li class="list-group-item">
-              <% if experience.votes_for.up.size > 0 %>
+                <h5 class="list-group-item-heading"><%= experience.topic %>, <small>     posted by <%= experience.user.username %></small></h5>
+                <p class="list-group-item-text"><%= truncate(experience.content, :length =>50) %></p>
+                <hr>
+                <% if current_user.voted_up_on? experience %>
+                    <a class="btn btn-sm"><%= link_to 'Unlike', unvote_experience_path(experience), method: :delete %></a> 
+                <% else %> 
+                    <a class="btn btn-sm"><%= link_to 'Click to Like', vote_experience_path(experience), method: :post %></a> 
+                <% end %>
+                <% if experience.votes_for.up.size > 0 %>
                 <span class="tag tag-default tag-pill float-xs-right"><%= experience.votes_for.up.size %> Likes</span> 
               <% else %>
-                <% if current_user.voted_up_on? experience %>
-                    <span class="btn btn-outline-primary btn-sm float-xs-right"><%= link_to 'Unlike', unvote_experience_path(experience), method: :delete %></span> 
-                <% else %>
-                  <span class="btn btn-outlne-primary btn-sm float-xs-right"><%= link_to 'Click to Like', vote_experience_path(experience), method: :post %></span> 
-                <% end %>
+                <span class="tag tag-default tag-pill float-xs-right">Be the first to like</span> 
               <% end %>
-                <h5 class="list-group-item-heading"><%= experience.topic %>, <small>     posted by <%= experience.user.username %></small></h5>
-                <p class="list-group-item-text"><%= truncate(experience.content, :length =>50) %> ...</p>
               </li>
           <% end %>
         </ul>
       </div>  
     </div>
+  </div>
   </div>
 
   

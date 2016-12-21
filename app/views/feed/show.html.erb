@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+  <div class="row">
+    <div class="col-md-4">
+        <%= link_to current_user.username, user_path(current_user.username) %>
+    </div>
+
+    <div class="col-md-8">
+        <ul class="list-group">
+          <% @experiences.each do |experience| %>
+            <%=link_to experience, class: "list-group-item list-group-item-action" do%>
+              <h5 class="list-group-item-heading"><%= experience.topic %>, <small>     posted by <%= experience.user.username %></small></h5>
+           
+              <p class="list-group-item-text"><%= truncate(experience.content, :length =>50) %> ...</p>
+              <% end %>
+          <% end %>
+        </ul>
+      </div>  
+    </div>
+  </div>
+
+  
+
+

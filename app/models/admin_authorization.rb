@@ -4,4 +4,6 @@ class AdminAuthorization < ActiveAdmin::AuthorizationAdapter
 		user && user.admin?
 	end
 	
+
+
 end

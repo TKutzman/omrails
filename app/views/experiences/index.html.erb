@@ -6,14 +6,14 @@
     </div>
 
     <div class="col-md-8">
-      <% if user_signed_in?  %><%= link_to 'Share An Experience', new_experience_path, class: "btn btn-outline-primary btn-sm" %><% end %>
-
       <div class="container">
-        <ul class="list-group">
+        <ul class="list-group active">
           <% @experiences.each do |experience| %>
               <li class="list-group-item">
+              <span class="btn btn-sm float-xs-right"><%= link_to 'Read more', experience_path(experience) %></span> 
                 <h5 class="list-group-item-heading"><%= experience.topic %>, <small>     posted by <%= experience.user.username %></small></h5>
                 <p class="list-group-item-text"><%= truncate(experience.content, :length =>50) %></p>
+                  <br>
                 <hr>
                 <% if current_user.voted_up_on? experience %>
                     <a class="btn btn-sm"><%= link_to 'Unlike', unvote_experience_path(experience), method: :delete %></a> 

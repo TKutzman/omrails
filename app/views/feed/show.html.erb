@@ -2,17 +2,20 @@
 <div class="container">
   <div class="row">
     <div class="col-md-4">
-        
+        <div class="card card-block">
+            <h4 class="card-title"><%= current_user.username %></h4>
+          </div>
     </div>
 
     <div class="col-md-8">
-      <h1>Following Feed</h1>
+      <h1>My Feed</h1>
         <ul class="list-group">
           <% @experiences.each do |experience| %>
             <%=link_to experience, class: "list-group-item list-group-item-action" do%>
               <h5 class="list-group-item-heading"><%= experience.topic %>, <small>     posted by <%= experience.user.username %></small></h5>
            
               <p class="list-group-item-text"><%= truncate(experience.content, :length =>50) %> ...</p>
+
               <% end %>
           <% end %>
         </ul>
